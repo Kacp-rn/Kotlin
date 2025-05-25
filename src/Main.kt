@@ -1,4 +1,14 @@
- fun main() {
+fun greeting()
+{
+    var pozdr: string = "hi"
+    println("pozdr")
+}
+
+
+
+
+
+fun main() {
     val name = "Kotlin"
     println("Hello, " + name + "!")
 
