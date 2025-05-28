@@ -16,7 +16,7 @@ class Ciricle() {
     {
         val x = radius
         val pole:Double = Math.PI*radius*radius
-
+        println(pole)
         return pole
     }
 
@@ -26,5 +26,32 @@ class Ciricle() {
         val circuit: Double = 2 * radius * Math.PI
         println("obwód to: $circuit")
         return circuit
+    }
+    fun choise(): Int
+    {
+        println("Choose an instruction:")
+        var choise:Int = 0
+        var choise_str:String = ""
+        choise_str = readln()
+        choise = choise_str.toInt()
+
+        return choise
+    }
+
+    fun case(): Unit
+    {
+        println("1. Oblicz obwód")
+        println("2. Oblicz pole")
+        println("3. Exit")
+
+
+
+        when (choise())
+        {
+            1->{circuit(start())}
+            2->{pole(start())}
+            3->{exit = false}
+            else->{println("podano złą wartość, spróbuj ponownie")}
+        }
     }
 }
