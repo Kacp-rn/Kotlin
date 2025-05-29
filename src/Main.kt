@@ -1,7 +1,5 @@
 var exit: Boolean = true
 
-//zmiana
-
 fun case(): Unit
 {
     val rectangle1 = Rectangle()
