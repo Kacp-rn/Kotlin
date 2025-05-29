@@ -1,4 +1,7 @@
 class Triangle() :Figure() {
+
+    //zmiana
+
     var str1:String = ""
     var str2:String = ""
     var str3:String = ""

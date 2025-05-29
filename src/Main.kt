@@ -1,5 +1,6 @@
 var exit: Boolean = true
 
+//zmiana
 
 fun case(): Unit
 {
