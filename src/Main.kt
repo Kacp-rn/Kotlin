@@ -1,19 +1,23 @@
 var exit: Boolean = true
 
+//zmiana
 
 fun case(): Unit
 {
     val rectangle1 = Rectangle()
     val circle1 = Circle()
+    val triangle1 = Triangle()
     println("1. Rectangle")
     println("2. Circle")
-    println("3. Exit")
+    println("3. Triangle")
+    println("4. Exit")
 
     when (choise())
     {
         1 -> {rectangle1.case() }
         2 -> {circle1.case() }
-        3 -> {exit = false}
+        3 -> {triangle1.case()}
+        4 -> {exit = false}
         else ->{println("podano złą wartość, spróbuj ponownie") }
     }
 
