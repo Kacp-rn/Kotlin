@@ -21,16 +21,20 @@ class Rectangle ()
         return b
     }
 
-    fun obw(x:Double, y:Double): Double
+    fun obwod(): Double
     {
+        start_a()
+        start_b()
         val x = a
         val y = b
         val obw: Double = (2*x)+(2*y)
         println(obw)
         return obw
     }
-    fun pole(x: Double, y:Double): Double
+    fun pole(): Double
     {
+        start_a()
+        start_b()
         val x = a
         val y = b
         val s:Double = x*y
@@ -59,8 +63,8 @@ class Rectangle ()
 
         when (choise())
         {
-            1->{obw(start_a(), start_b()); }
-            2->{pole(start_a(), start_b());}
+            1->{obwod() }
+            2->{pole()}
             3->{exit = false}
             else->{println("podano złą wartość, spróbuj ponownie")}
         }

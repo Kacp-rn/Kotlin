@@ -1,4 +1,4 @@
-class Ciricle() {
+class Circle() : Figure() {
 
     var radius: Double = 0.0
     var str: String = ""
@@ -12,21 +12,38 @@ class Ciricle() {
         return radius
     }
 
-    fun pole(x: Double): Double
-    {
+    override fun pole(): Double {
+        start()
         val x = radius
         val pole:Double = Math.PI*radius*radius
         println(pole)
         return pole
     }
 
-    fun circuit(x: Double): Double
+    override fun obwod(): Double
     {
+        start()
         val x = radius
         val circuit: Double = 2 * radius * Math.PI
         println("obwód to: $circuit")
         return circuit
     }
+
+//    fun pole(x: Double): Double
+//    {
+//        val x = radius
+//        val pole:Double = Math.PI*radius*radius
+//        println(pole)
+//        return pole
+//    }
+
+//    fun circuit(x: Double): Double
+//    {
+//        val x = radius
+//        val circuit: Double = 2 * radius * Math.PI
+//        println("obwód to: $circuit")
+//        return circuit
+//    }
     fun choise(): Int
     {
         println("Choose an instruction:")
@@ -48,8 +65,8 @@ class Ciricle() {
 
         when (choise())
         {
-            1->{circuit(start())}
-            2->{pole(start())}
+            1->{obwod ()}
+            2->{pole()}
             3->{exit = false}
             else->{println("podano złą wartość, spróbuj ponownie")}
         }
