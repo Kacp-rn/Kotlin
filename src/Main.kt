@@ -9,9 +9,27 @@ fun case(): Unit
 
     when (choise())
     {
-        1 -> {val a:Double=readln().toDouble(); val b:Double=readln().toDouble(); val rectangle1 = Rectangle(a,b); rectangle1.case();}
-        2 -> {val a:Double=readln().toDouble(); val circle1 = Circle(a); circle1.case() }
-        3 -> {val a:Double=readln().toDouble(); val b:Double=readln().toDouble();val c:Double=readln().toDouble(); val triangle1 = Triangle(a,b,c);triangle1.case()}
+        1 -> {
+            println("podaj a")
+            val a:Double=readln().toDouble();
+            println("podaj b")
+            val b:Double=readln().toDouble();
+            val rectangle1 = Rectangle(a,b);
+            rectangle1.case();
+            zapis(rectangle1)
+        }
+        2 -> {println("podaj a"); val a:Double=readln().toDouble(); val circle1 = Circle(a); circle1.case(); zapis(circle1)}
+        3 -> {
+            println("podaj a")
+            val a:Double=readln().toDouble();
+            println("podaj b")
+            val b:Double=readln().toDouble();
+            println("podaj c")
+            val c:Double=readln().toDouble();
+            val triangle1 = Triangle(a,b,c);
+            triangle1.case()
+            zapis(triangle1)
+        }
         4 -> {exit = false}
         else ->{println("podano złą wartość, spróbuj ponownie") }
     }
@@ -30,11 +48,18 @@ fun choise(): Int
 return choise
 }
 
-fun zapis():Unit
+fun zapis(f:Figure):Map<String, Map<String, Double>>
 {
     val figury = mutableMapOf<String, MutableMap<String, Double>>()
+    figury["figura${figury.size+1}"] = mutableMapOf("pole" to f.pole() , "obwod" to f.obwod())
 
-    figury["figura1"] = mutableMapOf("pole" to 0.0, "obwod" to 15.0)
+    return figury
+}
+
+fun odczyt():Unit
+{
+   //TODO: make function to read figury(mutableMapOf)  :)
+
 }
 
 fun main()
