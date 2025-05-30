@@ -1,40 +1,18 @@
-class Rectangle ()
+class Rectangle (a:Double,b:Double):Figure()
 {
-    var a: Double = 0.0
-    var b: Double = 0.0
+    var a: Double = a
+    var b: Double = b
 
-    var str1:String = ""
-    var str2:String = ""
-
-    fun start_a(): Double {
-        println("write length of a")
-        str1 = readln()
-        a = str1.toDouble()
-        return a
-    }
-    fun start_b():Double
+    override fun obwod(): Double
     {
-        println("write length of b")
-        str2 = readln()
-        b = str2.toDouble()
-
-        return b
-    }
-
-    fun obwod(): Double
-    {
-        start_a()
-        start_b()
         val x = a
         val y = b
         val obw: Double = (2*x)+(2*y)
         println(obw)
         return obw
     }
-    fun pole(): Double
+    override fun pole(): Double
     {
-        start_a()
-        start_b()
         val x = a
         val y = b
         val s:Double = x*y
@@ -45,10 +23,7 @@ class Rectangle ()
     fun choise(): Int
     {
         println("Choose an instruction:")
-        var choise:Int = 0
-        var choise_str:String = ""
-        choise_str = readln()
-        choise = choise_str.toInt()
+        val choise:Int = readln().toInt()
 
         return choise
     }

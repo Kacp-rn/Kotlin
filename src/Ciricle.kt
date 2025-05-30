@@ -1,19 +1,9 @@
-class Circle() : Figure() {
+class Circle(a: Double) : Figure() {
 
-    var radius: Double = 0.0
-    var str: String = ""
+    var radius: Double = a
 
-
-    fun start(): Double
+    override fun pole(): Double
     {
-        println("write length of radius")
-        str = readln()
-        radius = str.toDouble()
-        return radius
-    }
-
-    override fun pole(): Double {
-        start()
         val x = radius
         val pole:Double = Math.PI*radius*radius
         println(pole)
@@ -22,7 +12,6 @@ class Circle() : Figure() {
 
     override fun obwod(): Double
     {
-        start()
         val x = radius
         val circuit: Double = 2 * radius * Math.PI
         println("obwód to: $circuit")

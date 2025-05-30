@@ -2,9 +2,6 @@ var exit: Boolean = true
 
 fun case(): Unit
 {
-    val rectangle1 = Rectangle()
-    val circle1 = Circle()
-    val triangle1 = Triangle()
     println("1. Rectangle")
     println("2. Circle")
     println("3. Triangle")
@@ -12,9 +9,9 @@ fun case(): Unit
 
     when (choise())
     {
-        1 -> {rectangle1.case() }
-        2 -> {circle1.case() }
-        3 -> {triangle1.case()}
+        1 -> {val a:Double=readln().toDouble(); val b:Double=readln().toDouble(); val rectangle1 = Rectangle(a,b); rectangle1.case();}
+        2 -> {val a:Double=readln().toDouble(); val circle1 = Circle(a); circle1.case() }
+        3 -> {val a:Double=readln().toDouble(); val b:Double=readln().toDouble();val c:Double=readln().toDouble(); val triangle1 = Triangle(a,b,c);triangle1.case()}
         4 -> {exit = false}
         else ->{println("podano złą wartość, spróbuj ponownie") }
     }
@@ -37,13 +34,13 @@ fun zapis():Unit
 {
     val figury = mutableMapOf<String, MutableMap<String, Double>>()
 
-    figury["figura1"] = mutableMapOf("pole" to , "obwod" to 15.0)
+    figury["figura1"] = mutableMapOf("pole" to 0.0, "obwod" to 15.0)
 }
 
 fun main()
 {
     do {
         case()
-        Thread.sleep(2000)
+        Thread.sleep(1000)
     } while(exit)
 }
