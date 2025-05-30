@@ -33,15 +33,7 @@ class Triangle() :Figure() {
         return c
     }
 
-    fun height():Double
-    {
-        println("write length of triangle's height")
-        str_height = readln()
-        height = str_height.toDouble()
-        return height
-    }
-
-    override fun obwod(): Double
+   override fun obwod(): Double
     {
         start_a()
         start_b()
@@ -53,8 +45,11 @@ class Triangle() :Figure() {
     override fun pole(): Double
     {
         start_a()
-        height()
-        val pole:Double = (a*height)/2
+        start_b()
+        start_c()
+
+        val p:Double = (a+b+c)/2
+        val pole:Double = Math.sqrt(p * (p - a) * (p - b) * (p - c))
         println("pole wynosi: $pole")
         return pole
     }
