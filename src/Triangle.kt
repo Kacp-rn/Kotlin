@@ -18,6 +18,14 @@ class Triangle(a:Double, b:Double, c: Double) :Figure() {
         return pole
     }
 
+    fun choise(): String
+    {
+        println("Choose an instruction:")
+        val choise: String = readln()
+
+        return choise
+    }
+
     fun case(): Unit
     {
         println("1. Oblicz obwód")
