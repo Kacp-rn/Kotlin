@@ -20,10 +20,10 @@ class Rectangle (a:Double,b:Double):Figure()
         return s
     }
 
-    fun choise(): Int
+    fun choise(): String
     {
         println("Choose an instruction:")
-        val choise:Int = readln().toInt()
+        val choise: String = readln()
 
         return choise
     }
@@ -38,9 +38,9 @@ class Rectangle (a:Double,b:Double):Figure()
 
         when (choise())
         {
-            1->{obwod() }
-            2->{pole()}
-            3->{exit = false}
+            "1"->{obwod() }
+            "2"->{pole()}
+            "3"->{exit = false}
             else->{println("podano złą wartość, spróbuj ponownie")}
         }
     }

@@ -33,15 +33,13 @@ class Circle(a: Double) : Figure() {
 //        println("obwód to: $circuit")
 //        return circuit
 //    }
-    fun choise(): Int
+    fun choise(): String
     {
         println("Choose an instruction:")
-        var choise:Int = 0
-        var choise_str:String = ""
-        choise_str = readln()
-        choise = choise_str.toInt()
 
-        return choise
+        var choise_str:String = readln()
+
+        return choise_str
     }
 
     fun case(): Unit
@@ -54,9 +52,9 @@ class Circle(a: Double) : Figure() {
 
         when (choise())
         {
-            1->{obwod ()}
-            2->{pole()}
-            3->{exit = false}
+            "1"->{obwod ()}
+            "2"->{pole()}
+            "3"->{exit = false}
             else->{println("podano złą wartość, spróbuj ponownie")}
         }
     }

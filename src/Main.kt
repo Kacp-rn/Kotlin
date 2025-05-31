@@ -5,21 +5,22 @@ fun case(): Unit
     println("1. Rectangle")
     println("2. Circle")
     println("3. Triangle")
-    println("4. Exit")
+    println("4. Write down each figure with its area and perimeter")
+    println("5. Exit")
 
     when (choise())
     {
-        1 -> {
+        "1" -> {
             println("podaj a")
             val a:Double=readln().toDouble();
             println("podaj b")
             val b:Double=readln().toDouble();
             val rectangle1 = Rectangle(a,b);
             rectangle1.case();
-            zapis(rectangle1)
+            rectangle1.zapis()
         }
-        2 -> {println("podaj a"); val a:Double=readln().toDouble(); val circle1 = Circle(a); circle1.case(); zapis(circle1)}
-        3 -> {
+        "2" -> {println("podaj a"); val a:Double=readln().toDouble(); val circle1 = Circle(a); circle1.case(); circle1.zapis()}
+        "3" -> {
             println("podaj a")
             val a:Double=readln().toDouble();
             println("podaj b")
@@ -28,38 +29,23 @@ fun case(): Unit
             val c:Double=readln().toDouble();
             val triangle1 = Triangle(a,b,c);
             triangle1.case()
-            zapis(triangle1)
+            triangle1.zapis()
         }
-        4 -> {exit = false}
+        "4"->{Figure.odczytWszystkich()}
+
+        "5" -> {exit = false}
         else ->{println("podano złą wartość, spróbuj ponownie") }
     }
 
 }
 
-fun choise(): Int
+fun choise(): String
 {
     println("Choose an instruction:")
-    var choise:Int = 0
-    var choise_str:String = ""
-    choise_str = readln()
-    choise = choise_str.toInt()
 
+    var choise_str:String = readln()
 
-return choise
-}
-
-fun zapis(f:Figure):Map<String, Map<String, Double>>
-{
-    val figury = mutableMapOf<String, MutableMap<String, Double>>()
-    figury["figura${figury.size+1}"] = mutableMapOf("pole" to f.pole() , "obwod" to f.obwod())
-
-    return figury
-}
-
-fun odczyt():Unit
-{
-   //TODO: make function to read figury(mutableMapOf)  :)
-
+return choise_str
 }
 
 fun main()
